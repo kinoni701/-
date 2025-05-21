@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ใบ้น้องรหัส</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f0f8ff;
+    }
+    input, button {
+      font-size: 18px;
+      padding: 8px;
+      margin: 10px;
+    }
+    #result {
+      font-size: 20px;
+      margin-top: 20px;
+      color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <h1>ใบ้น้องรหัส</h1>
+  <p>ลองเดาชื่อดูสิ!</p>
+  <input type="text" id="guessInput" placeholder="พิมพ์ชื่อที่คิดว่าใช่">
+  <button onclick="checkGuess()">ตรวจสอบ</button>
+  <div id="result"></div>
+
+  <script>
+    const correctName = "การ์ตูน"; // เปลี่ยนชื่อนี้เป็นชื่อน้องรหัสจริง ๆ ได้เลย
+
+    function checkGuess() {
+      const userGuess = document.getElementById("guessInput").value.trim();
+      const result = document.getElementById("result");
+
+      if (userGuess === "") {
+        result.textContent = "พิมพ์อะไรก่อนสิ!";
+        result.style.color = "red";
+        return;
+      }
+
+      if (userGuess === correctName) {
+        result.textContent = "ถูกต้อง! เก่งมาก!";
+        result.style.color = "green";
+      } else {
+        result.textContent = "ไม่ใช่น้า~ ลองใหม่!";
+        result.style.color = "orange";
+      }
+    }
+  </script>
+</body>
+</html>
